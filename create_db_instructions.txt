@@ -1,0 +1,17 @@
+# start a DB in Docker
+docker run --name postgresql-container-awsdemo -p 5432:5432 -e POSTGRES_PASSWORD=somePassword -d postgres
+docker exec -it postgresql-container-awsdemo psql -U postgres
+
+# create DB instructions
+create user awsdemo_db_user;
+create database awsdemo_db;
+alter user awsdemo_db_user with encrypted password 'abc123def';
+grant all privileges on database awsdemo_db to awsdemo_db_user;
+
+# for starting the container later
+docker start postgresql-container-awsdemo
+
+Next, connect to the DB with the following parameters:
+DB_URL: jdbc:postgresql://localhost:5432/awsdemo_db
+DB_USER: awsdemo_db_user
+DB_PASS: abc123def
