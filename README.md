@@ -77,3 +77,5 @@ Header:
 Authorization: Bearer <access_token fom above example>
 ```
 
+[Here](https://bogdanstirbat.github.io/jekyll/update/2022/03/13/spring-boot-aws-beanstalk.html) there are instructions
+on deploying the app to AWS.
